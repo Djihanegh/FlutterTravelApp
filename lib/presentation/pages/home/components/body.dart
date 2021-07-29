@@ -37,29 +37,30 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   void buildTab() {
     categories.forEach((element) {
       tabs[i] = Container(
-        width: 100,
-        child: Column(
-        children: [
-          Container(
-              child: Text(
-            element,
-            style: TextStyle(
-                fontSize: 12.0,
-                fontFamily: 'Muli',
-                fontWeight: FontWeight.w500,
-                color: KPrimaryColor),
-          )),
-          Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(35),
-                  color: KPrimaryColor,
-                ),
-                height: 10,
-              ))
-        ],
-      ));
+          width: 100,
+          child: Column(
+            children: [
+              Container(
+                  child: Text(
+                element,
+                style: TextStyle(
+                    fontSize: 15.0,
+                    fontFamily: 'Muli',
+                    fontWeight: FontWeight.w400,
+                    color: KPrimaryColor),
+              )),
+              Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(35),
+                      color: KPrimaryColor,
+                    ),
+                    height: 8,
+                    width: 8,
+                  ))
+            ],
+          ));
       i++;
     });
   }
