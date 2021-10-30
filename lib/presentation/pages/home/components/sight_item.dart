@@ -122,6 +122,7 @@ class _SightItemState extends State<SightItem> {
                                     textDirection: TextDirection.rtl,
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
+                                        fontFamily: 'Muli',
                                         color: Colors.white,
                                         fontSize: 25,
                                         fontWeight: FontWeight.bold))),

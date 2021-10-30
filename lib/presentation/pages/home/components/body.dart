@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
 import 'package:travel_app/presentation/pages/home/components/tab_text.dart';
 import 'package:travel_app/utils/constants.dart';
@@ -133,8 +134,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 tabs: _tabs)),
         IndexedStack(index: _selectedIndex, children: _widgets),
         Padding(
-            padding: EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 30),
-            child: ExploreText()),
+            padding: EdgeInsets.only(left: 30, right: 20,top: 20),
+            child: PopularText()),
 
       ],
     );

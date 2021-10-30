@@ -10,7 +10,11 @@ class ExploreText extends StatelessWidget {
       children: [
         Text(
           "Explore",
-          style: Theme.of(context).textTheme.headline1,
+          style:  TextStyle(
+              fontFamily: 'Muli',
+              color: Colors.black,
+              fontSize: 35,
+           ),
         ),
         Container(
           height: 50,
