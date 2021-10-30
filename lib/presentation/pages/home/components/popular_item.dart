@@ -55,8 +55,8 @@ class PopularItem extends StatelessWidget {
                   child: Container(
                     height: 100,
                     alignment: Alignment.center,
-                    padding:
-                        EdgeInsets.only(left: 5, right: 5, top: 10, bottom: 10),
+                    padding: EdgeInsets.only(
+                        left: 15, right: 5, top: 10, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[

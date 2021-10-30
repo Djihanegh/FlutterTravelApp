@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
@@ -76,6 +77,24 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
     }
   }
 
+  List<Place> places = [
+    Place(
+        name: 'Djanet excursions',
+        rating: 4.6,
+        image: 'assets/images/djanet_2.jpg',
+        description: 'Description'),
+    Place(
+        name: 'Tikejda',
+        rating: 3.6,
+        image: 'assets/images/tikejda.jpg',
+        description: 'Description'),
+    Place(
+        name: 'El Gour of Brezina',
+        rating: 3.6,
+        image: 'assets/images/el_bayedh.jpg',
+        description: 'Description')
+  ];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -91,12 +110,12 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                   physics: ScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  itemCount: 3,
+                  itemCount: places.length,
                   itemBuilder: (BuildContext context, index) {
                     return SightItem(
-                      imageUrl: '',
-                      name: "Djanet excursions",
-                      rating: 4.6,
+                      imageUrl: places[index].image,
+                      name: places[index].name,
+                      rating: places[index].rating,
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
@@ -120,11 +139,10 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             height: 60,
             child: Row(
               children: [
-                buildNavBarItem(Icons.home, 0),
-                buildNavBarItem(Icons.shopping_bag_outlined, 1),
-                buildNavBarItem(Icons.notifications, 2),
-                buildNavBarItem(Icons.chat, 3),
-                buildNavBarItem(Icons.person, 4),
+                buildNavBarItem(Icons.home_outlined, 0),
+                buildNavBarItem(Icons.search_outlined, 1),
+                buildNavBarItem(Icons.bookmark_border, 2),
+                buildNavBarItem(Icons.settings_outlined, 3),
               ],
             )),
         body: SingleChildScrollView(
@@ -190,21 +208,13 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
           });
         },
         child: Container(
-          //    padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(10),
-
           height: 60,
-
-          width: MediaQuery.of(context).size.width / 7,
+          width: MediaQuery.of(context).size.width / 5.5,
           decoration: index == navBarIndex
               ? BoxDecoration(
                   color: KPrimaryColor, //Color(0xFF111015),
-                  borderRadius: BorderRadius.all(Radius.circular(30))
-                  /*gradient: LinearGradient(
-                      colors: [KPrimaryColor, Colors.white],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter)*/
-                  )
+                  borderRadius: BorderRadius.all(Radius.circular(30)))
               : BoxDecoration(color: Colors.white),
           child: Icon(
             icon,

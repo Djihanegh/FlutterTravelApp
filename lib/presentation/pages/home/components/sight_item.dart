@@ -52,7 +52,7 @@ class _SightItemState extends State<SightItem> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(30)),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/djanet_2.jpg'),
+                          image: AssetImage(widget.imageUrl),
                           fit: BoxFit.fill,
                         ),
                       ),
