@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.1.0
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -47,8 +48,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+   - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -65,10 +66,10 @@ flutter:
   fonts:
     - family: Muli
       fonts:
-        - asset: fonts/Muli-Bold.ttf
-        - asset: fonts/Muli-Light.ttf
-        - asset: fonts/Muli-SemiBold.ttf
-        - asset: fonts/Muli.ttf
+        - asset: assets/fonts/Muli-Bold.ttf
+        - asset: assets/fonts/Muli-Light.ttf
+        - asset: assets/fonts/Muli-SemiBold.ttf
+        - asset: assets/fonts/Muli.ttf
 
 
   #         style: italic
