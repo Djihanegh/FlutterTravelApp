@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/constants.dart';
 
 class PopularText extends StatelessWidget {
   const PopularText({Key? key}) : super(key: key);

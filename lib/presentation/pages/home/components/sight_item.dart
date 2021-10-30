@@ -28,7 +28,7 @@ class _SightItemState extends State<SightItem> {
         child: ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(30)),
             child: Container(
-                height: 300,
+                height: 200,
                 margin: const EdgeInsets.only(
                   bottom: 6.0,
                   top: 6,
@@ -76,7 +76,7 @@ class _SightItemState extends State<SightItem> {
                     ),
                     Positioned(
                       bottom: 100,
-                      left: 5,
+                      left: 15,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -109,11 +109,9 @@ class _SightItemState extends State<SightItem> {
                     ),
                     Positioned(
                         bottom: 30,
-                        left: 5,
+                        left: 15,
                         child: Column(
                           children: [
-                            //Expanded(
-                            // child:
                             Container(
                                 width: 150,
                                 child: Text(widget.name,
