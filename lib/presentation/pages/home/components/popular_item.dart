@@ -66,7 +66,7 @@ class PopularItem extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/djanet_2.jpg'),
+                              image: AssetImage('assets/images/timimoun.jpg'),
                               fit: BoxFit.fill,
                             ),
                           ),

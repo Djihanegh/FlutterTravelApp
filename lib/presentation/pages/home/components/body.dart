@@ -3,6 +3,7 @@ import 'package:travel_app/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
+import 'package:travel_app/presentation/pages/home/components/tour_item.dart';
 import 'package:travel_app/presentation/pages/home/home_page.dart';
 import 'package:travel_app/utils/constants.dart';
 
@@ -86,48 +87,24 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
     Place(
         name: 'Tikejda',
         rating: 3.6,
-        image: 'assets/images/tikejda.jpg',
+        image: 'assets/images/tikjda_2.jpg',
         description: 'Description'),
     Place(
         name: 'El Gour of Brezina',
         rating: 3.6,
-        image: 'assets/images/el_bayedh.jpg',
+        image: 'assets/images/brezina.jpg',
         description: 'Description')
   ];
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     buildTab();
-    for (int i = 0; i < 3; i++) {
-      _widgets.add(Visibility(
-        child: Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Container(
-                height: size.height * 0.4,
-                width: size.width,
-                child: ListView.separated(
-                  physics: ScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: places.length,
-                  itemBuilder: (BuildContext context, index) {
-                    return SightItem(
-                      imageUrl: places[index].image,
-                      name: places[index].name,
-                      rating: places[index].rating,
-                    );
-                  },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      width: 5,
-                    );
-                  },
-                ))),
-        maintainState: true,
-        visible: _selectedIndex == i,
-      ));
-    }
+    buildList(size);
+    //for (int i = 0; i < 3; i++) {
+
+    // }
 
     return Scaffold(
         backgroundColor: Colors.grey.shade50,
@@ -168,14 +145,6 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                     },
                     tabs: _tabs)),
             IndexedStack(index: _selectedIndex, children: _widgets),
-            Padding(
-                padding: EdgeInsets.only(left: 30, right: 20, top: 20),
-                child: PopularText()),
-            PopularItem(
-              name: "Timimoun Tour",
-              subtitle: "10 november - 20 november 2021",
-              image: "",
-            )
           ],
         )));
   }
@@ -221,5 +190,135 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             color: index == navBarIndex ? Colors.white : Colors.black,
           ),
         ));
+  }
+
+  List<Visibility> buildList(Size size) {
+    _widgets.insert(
+      0,
+      Visibility(
+        child: Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: Column(children: [
+              Container(
+                  height: size.height * 0.4,
+                  width: size.width,
+                  child: ListView.separated(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: places.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return SightItem(
+                        imageUrl: places[index].image,
+                        name: places[index].name,
+                        rating: places[index].rating,
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(
+                        width: 5,
+                      );
+                    },
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  child: PopularText()),
+              PopularItem(
+                name: "Timimoun Tour",
+                subtitle: "10 november - 20 november 2021",
+                image: "",
+              )
+            ])),
+        maintainState: true,
+        visible: _selectedIndex == 0,
+      ),
+    );
+
+    _widgets.insert(
+      1,
+      Visibility(
+        child: Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: Column(children: [
+              Container(
+                  height: size.height * 0.4,
+                  width: size.width,
+                  child: ListView.separated(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: places.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return TourItem(
+                        images: [],
+                        status: "New",
+                        imageUrl: places[1].image,
+                        name: places[1].name,
+                        rating: places[1].rating,
+                        numberOfTours: 12,
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(
+                        width: 5,
+                      );
+                    },
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  child: PopularText()),
+              PopularItem(
+                name: "Tour",
+                subtitle: "10 november - 20 november 2021",
+                image: "",
+              )
+            ])),
+        maintainState: true,
+        visible: _selectedIndex == 1,
+      ),
+    );
+
+    _widgets.insert(
+      2,
+      Visibility(
+        child: Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: Column(children: [
+              Container(
+                  height: size.height * 0.4,
+                  width: size.width,
+                  child: ListView.separated(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: places.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return SightItem(
+                        imageUrl: places[index].image,
+                        name: places[index].name,
+                        rating: places[index].rating,
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(
+                        width: 5,
+                      );
+                    },
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  child: PopularText()),
+              PopularItem(
+                name: "Timimoun Tour",
+                subtitle: "10 november - 20 november 2021",
+                image: "",
+              )
+            ])),
+        maintainState: true,
+        visible: _selectedIndex == 2,
+      ),
+    );
+
+    return _widgets;
   }
 }

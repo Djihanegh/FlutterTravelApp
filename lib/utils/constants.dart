@@ -16,3 +16,4 @@ const theme = const TextTheme(
 
 const KPrimaryColor = Color(0xFF316bff);
 const KSecondaryColor = Color(0xFF8e94a3);
+const KLightGrey = Color(0xFFDCEBEF);
