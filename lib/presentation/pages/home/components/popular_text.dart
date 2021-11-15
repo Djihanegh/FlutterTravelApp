@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/constants.dart';
 
 class PopularText extends StatelessWidget {
@@ -6,19 +7,31 @@ class PopularText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Popular",
-          style: TextStyle(
-              fontFamily: 'Muli-Bold',
-              color: Colors.black,
-              fontSize: 20,
-             ),
+        Text('RECENTLY VIEWED',
+            style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.normal,
+                fontSize: 10,
+                color: KLightGreyy)),
+        SizedBox(
+          height: 10,
         ),
-
+        Text("Pick up where you left off",
+            style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+                color: Colors.black)),
       ],
     );
+
+    /*  Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+
+      ],
+    );*/
   }
 }

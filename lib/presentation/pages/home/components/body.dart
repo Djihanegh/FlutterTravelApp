@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/models/place.dart';
+import 'package:travel_app/data/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
@@ -198,7 +198,10 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       Visibility(
         child: Padding(
             padding: EdgeInsets.only(top: 20),
-            child: Column(children: [
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
               Container(
                   height: size.height * 0.4,
                   width: size.width,
@@ -221,7 +224,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                     },
                   )),
               Padding(
-                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
                   child: PopularText()),
               PopularItem(
                 name: "Timimoun Tour",
@@ -239,7 +242,11 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       Visibility(
         child: Padding(
             padding: EdgeInsets.only(top: 20),
-            child: Column(children: [
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
               Container(
                   height: size.height * 0.4,
                   width: size.width,
@@ -265,7 +272,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                     },
                   )),
               Padding(
-                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
                   child: PopularText()),
               PopularItem(
                 name: "Tour",
@@ -282,8 +289,12 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       2,
       Visibility(
         child: Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: Column(children: [
+            padding: EdgeInsets.only(top: 20 ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
               Container(
                   height: size.height * 0.4,
                   width: size.width,
@@ -306,7 +317,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                     },
                   )),
               Padding(
-                  padding: EdgeInsets.only(left: 30, right: 20, top: 20),
+                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
                   child: PopularText()),
               PopularItem(
                 name: "Timimoun Tour",
