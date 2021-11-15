@@ -18,3 +18,4 @@ const KPrimaryColor = Color(0xFF316bff);
 const KSecondaryColor = Color(0xFF8e94a3);
 const KLightGrey = Color(0xFFDCEBEF);
 const KLightGreyy = Color(0xFFADB3BC);
+const KGrey = Color(0xFFF0F3F6);

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/data/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
@@ -6,7 +8,9 @@ import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
 import 'package:travel_app/presentation/pages/home/components/tour_item.dart';
 import 'package:travel_app/presentation/pages/home/home_page.dart';
 import 'package:travel_app/utils/constants.dart';
+import 'package:travel_app/utils/size_config.dart';
 
+import 'categories_list_view.dart';
 import 'explore_text.dart';
 
 class Body extends StatefulWidget {
@@ -99,6 +103,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    SizeConfig().init(context);
 
     buildTab();
     buildList(size);
@@ -129,7 +134,39 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 padding:
                     EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 30),
                 child: ExploreText()),
+
             Container(
+                color: KGrey,
+                height: 200,
+                width: SizeConfig.screenWidth,
+                child: Padding(
+                  padding:
+                      EdgeInsets.only(top: 10, left: 20, right: 0, bottom: 0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('CATEGORIES',
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 10,
+                              color: KLightGreyy)),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Choose your own adventure",
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                              color: Colors.black)),
+                      CategoriesListView()
+                    ],
+                  ),
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            /* Container(
                 height: 50,
                 width: double.infinity,
                 child: TabBar(
@@ -144,7 +181,62 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                       });
                     },
                     tabs: _tabs)),
-            IndexedStack(index: _selectedIndex, children: _widgets),
+            IndexedStack(index: _selectedIndex, children: _widgets),*/
+
+            Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text('BEST RATING',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10,
+                                  color: KLightGreyy))),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text("Popular Destinations",
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
+                                  color: Colors.black))),
+                      Container(
+                          height: size.height * 0.35,
+                          width: size.width,
+                          child: ListView.separated(
+                            physics: ScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            itemCount: places.length,
+                            itemBuilder: (BuildContext context, index) {
+                              return SightItem(
+                                imageUrl: places[index].image,
+                                name: places[index].name,
+                                rating: places[index].rating,
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return SizedBox(
+                                width: 5,
+                              );
+                            },
+                          )),
+                      Padding(
+                          padding: EdgeInsets.only(left: 30, right: 0, top: 20),
+                          child: PopularText()),
+                      PopularItem(
+                        name: "Timimoun Tour",
+                        subtitle: "10 november - 20 november 2021",
+                        image: "",
+                      )
+                    ])),
           ],
         )));
   }
@@ -202,36 +294,36 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-              Container(
-                  height: size.height * 0.4,
-                  width: size.width,
-                  child: ListView.separated(
-                    physics: ScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: places.length,
-                    itemBuilder: (BuildContext context, index) {
-                      return SightItem(
-                        imageUrl: places[index].image,
-                        name: places[index].name,
-                        rating: places[index].rating,
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        width: 5,
-                      );
-                    },
-                  )),
-              Padding(
-                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
-                  child: PopularText()),
-              PopularItem(
-                name: "Timimoun Tour",
-                subtitle: "10 november - 20 november 2021",
-                image: "",
-              )
-            ])),
+                  Container(
+                      height: size.height * 0.4,
+                      width: size.width,
+                      child: ListView.separated(
+                        physics: ScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: places.length,
+                        itemBuilder: (BuildContext context, index) {
+                          return SightItem(
+                            imageUrl: places[index].image,
+                            name: places[index].name,
+                            rating: places[index].rating,
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: 5,
+                          );
+                        },
+                      )),
+                  Padding(
+                      padding: EdgeInsets.only(left: 30, right: 0, top: 20),
+                      child: PopularText()),
+                  PopularItem(
+                    name: "Timimoun Tour",
+                    subtitle: "10 november - 20 november 2021",
+                    image: "",
+                  )
+                ])),
         maintainState: true,
         visible: _selectedIndex == 0,
       ),
@@ -245,41 +337,40 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 children: [
-              Container(
-                  height: size.height * 0.4,
-                  width: size.width,
-                  child: ListView.separated(
-                    physics: ScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: places.length,
-                    itemBuilder: (BuildContext context, index) {
-                      return TourItem(
-                        images: [],
-                        status: "New",
-                        imageUrl: places[1].image,
-                        name: places[1].name,
-                        rating: places[1].rating,
-                        numberOfTours: 12,
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        width: 5,
-                      );
-                    },
-                  )),
-              Padding(
-                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
-                  child: PopularText()),
-              PopularItem(
-                name: "Tour",
-                subtitle: "10 november - 20 november 2021",
-                image: "",
-              )
-            ])),
+                  Container(
+                      height: size.height * 0.4,
+                      width: size.width,
+                      child: ListView.separated(
+                        physics: ScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: places.length,
+                        itemBuilder: (BuildContext context, index) {
+                          return TourItem(
+                            images: [],
+                            status: "New",
+                            imageUrl: places[1].image,
+                            name: places[1].name,
+                            rating: places[1].rating,
+                            numberOfTours: 12,
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: 5,
+                          );
+                        },
+                      )),
+                  Padding(
+                      padding: EdgeInsets.only(left: 30, right: 0, top: 20),
+                      child: PopularText()),
+                  PopularItem(
+                    name: "Tour",
+                    subtitle: "10 november - 20 november 2021",
+                    image: "",
+                  )
+                ])),
         maintainState: true,
         visible: _selectedIndex == 1,
       ),
@@ -289,42 +380,41 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       2,
       Visibility(
         child: Padding(
-            padding: EdgeInsets.only(top: 20 ),
+            padding: EdgeInsets.only(top: 20),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 children: [
-              Container(
-                  height: size.height * 0.4,
-                  width: size.width,
-                  child: ListView.separated(
-                    physics: ScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: places.length,
-                    itemBuilder: (BuildContext context, index) {
-                      return SightItem(
-                        imageUrl: places[index].image,
-                        name: places[index].name,
-                        rating: places[index].rating,
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
-                        width: 5,
-                      );
-                    },
-                  )),
-              Padding(
-                  padding: EdgeInsets.only(left: 30, right: 0, top: 20),
-                  child: PopularText()),
-              PopularItem(
-                name: "Timimoun Tour",
-                subtitle: "10 november - 20 november 2021",
-                image: "",
-              )
-            ])),
+                  Container(
+                      height: size.height * 0.4,
+                      width: size.width,
+                      child: ListView.separated(
+                        physics: ScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: places.length,
+                        itemBuilder: (BuildContext context, index) {
+                          return SightItem(
+                            imageUrl: places[index].image,
+                            name: places[index].name,
+                            rating: places[index].rating,
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: 5,
+                          );
+                        },
+                      )),
+                  Padding(
+                      padding: EdgeInsets.only(left: 30, right: 0, top: 20),
+                      child: PopularText()),
+                  PopularItem(
+                    name: "Timimoun Tour",
+                    subtitle: "10 november - 20 november 2021",
+                    image: "",
+                  )
+                ])),
         maintainState: true,
         visible: _selectedIndex == 2,
       ),

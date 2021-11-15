@@ -24,7 +24,7 @@ class _SightItemState extends State<SightItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 23, right: 0, top: 10),
+        padding: EdgeInsets.only(left: 20, right: 0, top: 10),
         child: ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(30)),
             child: Container(
