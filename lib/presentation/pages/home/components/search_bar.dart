@@ -3,37 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 
-class ExploreText extends StatelessWidget {
-  const ExploreText({Key? key}) : super(key: key);
+class SearchBar extends StatelessWidget {
+  const SearchBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return /* Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [*/
-        /* Text(
-          "Explore",
-          style: TextStyle(
-            fontFamily: 'Muli',
-            color: Colors.black,
-            fontSize: 35,
-          ),
-        ),*/
-        //Spacer(),
-        /* Container(
-          height: 50,
-          decoration: BoxDecoration(boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0.0, 1.0), //(x,y)
-              blurRadius: 6.0,
-            ),
-          ], borderRadius: BorderRadius.circular(30), color: Colors.white),
-          child: IconButton(
-            icon: Icon(Icons.explore_sharp),
-            onPressed: () {},
-          ),
-        )*/
+    return
         Padding(
             padding: EdgeInsets.only(right: 0),
             child: Container(
@@ -45,7 +20,6 @@ class ExploreText extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    //Flexible(child: CustomText()),
                     Text("Search places"),
 
                     SvgPicture.asset(

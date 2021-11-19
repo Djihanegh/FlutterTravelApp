@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/presentation/pages/home/home_page.dart';
+import 'package:travel_app/presentation/pages/home/home.dart';
 import 'package:travel_app/utils/constants.dart';
 
 void main() {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Regular',
         textTheme: theme,
       ),
-      home: HomePage(),
+      home: Home(),
     );
   }
 }
