@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/size_config.dart';
 import 'components/body.dart';
 
@@ -12,7 +13,10 @@ class TripsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'My Trips',
-          style: TextStyle(color: Colors.black),
+          style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w600,
+              fontSize: 25,
+              color: Colors.black),
         ),
         backgroundColor: Colors.white,
         elevation: 0,

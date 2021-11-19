@@ -37,14 +37,14 @@ class _HomeState extends State<Home> {
   }
 
   Widget _homePage = new HomePage();
-  Widget _favoritePage = new FavoritePage();
-  Widget _tripsPage = new TripsPage();
-  Widget _profilePage = new TripsPage();
+  final _favoritePage = new FavoritePage();
+  final _tripsPage = new TripsPage();
+  final _profilePage = new TripsPage();
 
   Widget _pageChooser(int page) {
     switch (page) {
       case 0:
-        return _homePage;
+        return HomePage();
       case 1:
         return _favoritePage;
       case 2:
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         return _profilePage;
 
       default:
-        return _homePage;
+        return HomePage();
     }
   }
 
