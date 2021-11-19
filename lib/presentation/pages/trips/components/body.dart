@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/utils/constants.dart';
-import 'package:travel_app/utils/size_config.dart';
-
 import 'custom_text.dart';
 import 'trip_item.dart';
 
@@ -18,7 +14,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+            padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
