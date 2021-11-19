@@ -107,9 +107,6 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
 
     buildTab();
     buildList(size);
-    //for (int i = 0; i < 3; i++) {
-
-    // }
 
     return Scaffold(
         backgroundColor: Colors.grey.shade50,
@@ -122,9 +119,9 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             child: Row(
               children: [
                 buildNavBarItem(Icons.home_outlined, 0),
-                buildNavBarItem(Icons.search_outlined, 1),
-                buildNavBarItem(Icons.bookmark_border, 2),
-                buildNavBarItem(Icons.settings_outlined, 3),
+                buildNavBarItem(Icons.favorite_border_outlined, 1),
+                buildNavBarItem(Icons.explore_outlined, 2),
+                buildNavBarItem(Icons.person_outline_rounded, 3),
               ],
             )),
         body: SingleChildScrollView(
@@ -134,7 +131,6 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 padding:
                     EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 30),
                 child: ExploreText()),
-
             Container(
                 color: KGrey,
                 height: 200,
@@ -163,28 +159,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                     ],
                   ),
                 )),
-            SizedBox(
-              height: 10,
-            ),
-            /* Container(
-                height: 50,
-                width: double.infinity,
-                child: TabBar(
-                    indicatorColor: Colors.white,
-                    labelColor: Colors.yellow,
-                    controller: _tabController,
-                    isScrollable: true,
-                    onTap: (int index) {
-                      setState(() {
-                        _selectedIndex = index;
-                        _tabController?.animateTo(index);
-                      });
-                    },
-                    tabs: _tabs)),
-            IndexedStack(index: _selectedIndex, children: _widgets),*/
-
             Padding(
-                padding: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 30),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,11 +172,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                                   fontWeight: FontWeight.normal,
                                   fontSize: 10,
                                   color: KLightGreyy))),
-                      SizedBox(
-                        height: 10,
-                      ),
                       Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 20, top: 10),
                           child: Text("Popular Destinations",
                               style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.w600,
