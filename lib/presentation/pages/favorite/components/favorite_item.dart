@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/size_config.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class FavoriteItem extends StatelessWidget {
   const FavoriteItem(
@@ -49,57 +50,38 @@ class FavoriteItem extends StatelessWidget {
                             topRight: Radius.circular(10),
                             topLeft: Radius.circular(10)),
                         image: DecorationImage(
-                            image: AssetImage(
-                                imagePath), // "assets/images/ningaloo.jpg"
-                            fit: BoxFit.cover)),
+                            image: AssetImage(imagePath), fit: BoxFit.cover)),
                   ),
                   Padding(
                       padding: const EdgeInsets.only(top: 10, left: 10),
                       child: Text(title.toUpperCase(), //
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Colors.black))),
+                          style: TextStyles.regular4)),
                   Padding(
                     padding: const EdgeInsets.only(top: 5, left: 10),
                     child: Text(subtitle,
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                            color: Colors.black)),
+                        style: TextStyles.heading.copyWith(fontSize: 14)),
                   ),
                   Padding(
                       padding: const EdgeInsets.only(top: 5, left: 10),
                       child: Row(
                         children: [
                           Text("\$$price" " per person ",
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 11,
-                                  color: Colors.black)),
+                              style: TextStyles.regular3),
                           Container(
                             height: 3,
                             width: 3,
                             decoration: BoxDecoration(
-                                color: Colors.black, shape: BoxShape.circle),
+                                color: AppColors.black, shape: BoxShape.circle),
                           ),
-                          Text(" $hours" " hours ",
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 11,
-                                  color: Colors.black)),
+                          Text(" $hours" " hours ", style: TextStyles.regular3),
                           Container(
                             height: 3,
                             width: 3,
                             decoration: BoxDecoration(
-                                color: Colors.black, shape: BoxShape.circle),
+                                color: AppColors.black, shape: BoxShape.circle),
                           ),
                           Text(" $details.",
-                              maxLines: 3,
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 11,
-                                  color: Colors.black)),
+                              maxLines: 3, style: TextStyles.regular3),
                         ],
                       )),
                   Padding(
@@ -111,16 +93,8 @@ class FavoriteItem extends StatelessWidget {
                             size: 13,
                             color: AppColors.primaryColor,
                           ),
-                          Text(rating.toString(),
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 11,
-                                  color: AppColors.primaryColor)),
-                          Text(" ($reviews)",
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 11,
-                                  color: Colors.black))
+                          Text(rating.toString(), style: TextStyles.semiBold),
+                          Text(" ($reviews)", style: TextStyles.light)
                         ],
                       ))
                 ],

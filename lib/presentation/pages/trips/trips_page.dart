@@ -13,15 +13,8 @@ class TripsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'My Trips',
-          style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w600,
-              fontSize: 25,
-              color: Colors.black),
         ),
-        backgroundColor: Colors.white,
-        elevation: 0,
       ),
-      backgroundColor: Colors.white,
       body: Body(),
     );
   }

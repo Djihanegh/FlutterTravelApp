@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/app_assets.dart';
 import 'favorite_item.dart';
 
 class Body extends StatefulWidget {
@@ -19,7 +20,7 @@ class _BodyState extends State<Body> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 FavoriteItem(
-                  imagePath: 'assets/images/whale-watching.jpg',
+                  imagePath: AppAssets.whaleWhatching,
                   subtitle: 'Whale Watching Tour',
                   title: 'Family, photography',
                   hours: '5',
@@ -29,7 +30,7 @@ class _BodyState extends State<Body> {
                   rating: 4.0,
                 ),
                 FavoriteItem(
-                  imagePath: 'assets/images/hiking-tour.jpg',
+                  imagePath: AppAssets.riffelseeHiking,
                   subtitle: 'Riffelsee hiking',
                   title: 'Hiking, photography',
                   hours: '5',
