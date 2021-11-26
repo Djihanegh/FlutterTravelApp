@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 import 'app_colors.dart';
 
-const theme = const TextTheme(
+/*const theme = const TextTheme(
   headline1: TextStyle(
       fontSize: 35.0,
       fontFamily: 'Muli',
@@ -14,9 +15,13 @@ const theme = const TextTheme(
       fontWeight: FontWeight.w200,
       color: AppColors.primaryColor),
   bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-);
+);*/
 
 final themeDate = ThemeData(
-  scaffoldBackgroundColor: Colors.white,
-
-);
+    fontFamily: 'Regular',
+    scaffoldBackgroundColor: AppColors.white,
+    appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: AppColors.white,
+        elevation: 0,
+        titleTextStyle: TextStyles.heading.copyWith(fontSize: 25)));

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/text_styles.dart';
 
 class PopularText extends StatelessWidget {

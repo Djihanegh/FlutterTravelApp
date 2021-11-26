@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_app/presentation/pages/home/home.dart';
-import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
-import 'package:travel_app/utils/text_styles.dart';
+import 'package:travel_app/utils/theme.dart';
 
 import 'config/routes/navigation_service.dart';
 import 'config/routes/route_generator.dart';
@@ -24,15 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.home,
       onGenerateRoute: RouteGenerator.generateRoute,
       navigatorKey: getIt<NavigationService>().navigatorKey,
-      theme: ThemeData(
-          fontFamily: 'Regular',
-          textTheme: theme,
-          scaffoldBackgroundColor: AppColors.white,
-          appBarTheme: AppBarTheme(
-              centerTitle: true,
-              backgroundColor: AppColors.white,
-              elevation: 0,
-              titleTextStyle: TextStyles.heading.copyWith(fontSize: 25))),
+      theme: themeDate,
       home: Home(),
     );
   }

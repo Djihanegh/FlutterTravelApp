@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 import 'package:travel_app/utils/text_styles.dart';
 

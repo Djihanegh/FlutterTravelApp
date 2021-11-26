@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/text_styles.dart';
 
 class TourItem extends StatefulWidget {

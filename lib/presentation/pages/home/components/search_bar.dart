@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:travel_app/utils/app_assets.dart';
 import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 
 class SearchBar extends StatelessWidget {

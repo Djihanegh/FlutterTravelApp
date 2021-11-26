@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/presentation/pages/favorite/favorite_page.dart';
 import 'package:travel_app/presentation/pages/trips/trips_page.dart';
 import 'package:travel_app/presentation/widgets/nav_bar_widget.dart';
-import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 
 import 'home_page.dart';
 
