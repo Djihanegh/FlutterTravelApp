@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class TripItem extends StatelessWidget {
   const TripItem(
@@ -49,10 +50,7 @@ class TripItem extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.only(top: 10, left: 10),
                       child: Text(date, //
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 10,
-                              color: AppColors.secondaryColor))),
+                          style: TextStyles.normal.copyWith(color: AppColors.secondaryColor))),
                   Padding(
                       padding:
                           const EdgeInsets.only(top: 5, left: 10, right: 10),
@@ -61,10 +59,7 @@ class TripItem extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(title, // 'Dive with Whale sharks'
-                              style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black)),
+                              style: TextStyles.heading.copyWith(fontSize: 14)),
                           Icon(Icons.navigate_next_outlined,
                               color: Colors.black.withOpacity(0.4))
                         ],
@@ -72,10 +67,7 @@ class TripItem extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.only(top: 0, left: 10),
                       child: Text(place,
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13,
-                              color: Colors.black)))
+                          style: TextStyles.regular2.copyWith(color: AppColors.black)))
                 ],
               ),
             )));

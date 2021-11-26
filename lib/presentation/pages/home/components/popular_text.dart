@@ -14,7 +14,7 @@ class PopularText extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ...[
-            Text('RECENTLY VIEWED', style: TextStyles.normal),
+            Text('RECENTLY VIEWED', style: TextStyles.normal.copyWith(color: AppColors.mediumGrey)),
             Text("Pick up where you left off", style: TextStyles.heading.copyWith(fontSize: 18)),
           ].expand(
             (widget) => [

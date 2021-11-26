@@ -15,16 +15,15 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       color: AppColors.primaryColor);
 
-  static const regular2 = TextStyle(
-      fontSize: 13,
-      color: AppColors.secondaryColor,
-      fontWeight: FontWeight.w400);
+  static const regular2 = TextStyle(fontSize: 13, fontWeight: FontWeight.w400);
 
   static final regular3 = GoogleFonts.montserrat(
       fontWeight: FontWeight.w400, fontSize: 11, color: Colors.black);
 
   static final regular4 = GoogleFonts.montserrat(
       fontWeight: FontWeight.w400, fontSize: 12, color: Colors.black);
+
+
 
   static const bold =
       TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold);
@@ -40,7 +39,9 @@ class TextStyles {
   static final medium = GoogleFonts.montserrat(fontWeight: FontWeight.w500);
 
   static final normal = GoogleFonts.montserrat(
-      fontWeight: FontWeight.normal, fontSize: 10, color: AppColors.mediumGrey);
+      fontWeight: FontWeight.normal, fontSize: 10);
+
+
 
   static final light = GoogleFonts.montserrat(
       fontWeight: FontWeight.w300, fontSize: 11, color: Colors.black);

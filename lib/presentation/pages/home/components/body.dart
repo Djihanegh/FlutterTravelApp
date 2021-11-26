@@ -67,7 +67,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('CATEGORIES', style: TextStyles.normal),
+                  Text('CATEGORIES', style: TextStyles.normal.copyWith(color: AppColors.mediumGrey)),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
                   ),
@@ -85,7 +85,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 20),
-                      child: Text('BEST RATING', style: TextStyles.normal)),
+                      child: Text('BEST RATING', style: TextStyles.normal.copyWith(color: AppColors.mediumGrey))),
                   Padding(
                       padding: EdgeInsets.only(left: 20, top: 10),
                       child: Text("Popular Destinations",

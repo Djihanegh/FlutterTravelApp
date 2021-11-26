@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/app_assets.dart';
 import 'custom_text.dart';
 import 'trip_item.dart';
 
@@ -21,14 +22,14 @@ class _BodyState extends State<Body> {
               children: [
                 CustomText(title: 'Upcoming trips'),
                 TripItem(
-                  imagePath: 'assets/images/ningaloo.jpg',
+                  imagePath: AppAssets.ningaloo,
                   place: 'Ningaloo, Australia',
                   title: 'Dive with Whale sharks',
                   date: 'June 30, 2020',
                 ),
                 CustomText(title: 'Completed trips'),
                 TripItem(
-                  imagePath: 'assets/images/peru.jpg',
+                  imagePath:  AppAssets.peru,
                   place: 'Cusco, Peru',
                   title: 'Hiking through the Rainbow Mountain',
                   date: 'May 30, 2020',

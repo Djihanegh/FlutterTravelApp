@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/app_assets.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/text_styles.dart';
 
 class PopularItem extends StatelessWidget {
@@ -90,7 +91,7 @@ class PopularItem extends StatelessWidget {
                                             const EdgeInsets.only(left: 10),
                                         child: Text(
                                           "$subtitle",
-                                          style: TextStyles.regular2,
+                                          style: TextStyles.regular2.copyWith(color: AppColors.secondaryColor),
                                           textAlign: TextAlign.left,
                                         ),
                                       ),
