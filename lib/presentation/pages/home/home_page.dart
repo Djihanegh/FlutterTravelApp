@@ -9,12 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-
-      backgroundColor: Colors.white,
       body: Body(),
     );
   }
-
-
-
 }

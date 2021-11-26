@@ -15,3 +15,8 @@ const theme = const TextTheme(
       color: AppColors.primaryColor),
   bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
 );
+
+final themeDate = ThemeData(
+  scaffoldBackgroundColor: Colors.white,
+
+);

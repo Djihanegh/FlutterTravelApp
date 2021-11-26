@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/utils/constants.dart';
+import 'package:travel_app/utils/app_colors.dart';
 
 class PopularItem extends StatelessWidget {
   final String? name;
@@ -106,7 +106,7 @@ class PopularItem extends StatelessWidget {
                                         "$subtitle",
                                         style: TextStyle(
                                             fontSize: 13,
-                                            color: KSecondaryColor,
+                                            color: AppColors.secondaryColor,
                                             fontWeight: FontWeight.w400),
                                         textAlign: TextAlign.left,
                                       ),

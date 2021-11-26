@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 
 class PopularText extends StatelessWidget {
@@ -15,7 +16,7 @@ class PopularText extends StatelessWidget {
             style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.normal,
                 fontSize: 10,
-                color: KLightGreyy)),
+                color: AppColors.mediumGrey)),
         SizedBox(
           height: 10,
         ),

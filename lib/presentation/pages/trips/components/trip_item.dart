@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 
@@ -51,7 +52,7 @@ class TripItem extends StatelessWidget {
                           style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.normal,
                               fontSize: 10,
-                              color: KSecondaryColor))),
+                              color: AppColors.secondaryColor))),
                   Padding(
                       padding:
                           const EdgeInsets.only(top: 5, left: 10, right: 10),

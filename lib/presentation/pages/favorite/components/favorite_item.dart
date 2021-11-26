@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/utils/constants.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/size_config.dart';
 
 class FavoriteItem extends StatelessWidget {
@@ -109,13 +109,13 @@ class FavoriteItem extends StatelessWidget {
                           Icon(
                             Icons.star,
                             size: 13,
-                            color: KPrimaryColor,
+                            color: AppColors.primaryColor,
                           ),
                           Text(rating.toString(),
                               style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 11,
-                                  color: KPrimaryColor)),
+                                  color: AppColors.primaryColor)),
                           Text(" ($reviews)",
                               style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.w300,

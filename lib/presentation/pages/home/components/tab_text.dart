@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 
@@ -35,7 +36,7 @@ class _TabTextState extends State<TabText> {
                   fontSize: 15.0,
                   fontFamily: 'Muli',
                   fontWeight: FontWeight.w400,
-                  color: KPrimaryColor),
+                  color: AppColors.primaryColor),
             )),
             Padding(
               padding: EdgeInsets.only(top: 10),

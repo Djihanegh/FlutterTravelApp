@@ -4,6 +4,7 @@ import 'package:travel_app/data/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
 
@@ -56,7 +57,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             padding: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 30),
             child: SearchBar()),
         Container(
-            color: KGrey,
+            color: AppColors.grey,
             height: 200,
             width: SizeConfig.screenWidth,
             child: Padding(
@@ -69,7 +70,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                       style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.normal,
                           fontSize: 10,
-                          color: KLightGreyy)),
+                          color: AppColors.mediumGrey)),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
                   ),
@@ -94,7 +95,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                           style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.normal,
                               fontSize: 10,
-                              color: KLightGreyy))),
+                              color: AppColors.mediumGrey))),
                   Padding(
                       padding: EdgeInsets.only(left: 20, top: 10),
                       child: Text("Popular Destinations",
