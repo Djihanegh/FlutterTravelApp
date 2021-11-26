@@ -65,7 +65,6 @@ class _HomeState extends State<Home> {
   }
 
   void _onPressed(int index) {
-    print("ONNNNNNNNNNNNNNNNNNN");
     setState(() {
       navBarIndex = index;
     });

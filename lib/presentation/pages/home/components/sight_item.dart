@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:travel_app/utils/app_colors.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class SightItem extends StatefulWidget {
   final String imageUrl;
@@ -38,7 +40,7 @@ class _SightItemState extends State<SightItem> {
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: AppColors.greyWithOpacity.withOpacity(0.5),
                       offset: Offset(0.0, 1.0), //(x,y)
                       blurRadius: 6.0,
                     ),
@@ -62,7 +64,7 @@ class _SightItemState extends State<SightItem> {
                       right: 5,
                       child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColors.white,
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                           height: 40,
@@ -71,7 +73,7 @@ class _SightItemState extends State<SightItem> {
                           margin: EdgeInsets.all(10),
                           child: Icon(
                             Icons.bookmark,
-                            color: Colors.blue,
+                            color: AppColors.blue,
                           )),
                     ),
                     Positioned(
@@ -102,7 +104,7 @@ class _SightItemState extends State<SightItem> {
                           ),
                           Text(
                             "${widget.rating}",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
+                            style: TextStyles.rating,
                           ),
                         ],
                       ),
@@ -119,12 +121,9 @@ class _SightItemState extends State<SightItem> {
                                     overflow: TextOverflow.ellipsis,
                                     textDirection: TextDirection.rtl,
                                     textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        fontFamily: 'Muli',
-                                        color: Colors.white,
+                                    style: TextStyles.tourName.copyWith(
                                         fontSize: 25,
                                         fontWeight: FontWeight.bold))),
-
                           ],
                         )),
                   ],

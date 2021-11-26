@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/utils/app_colors.dart';
-import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class TabText extends StatefulWidget {
   final String text;
@@ -32,11 +31,7 @@ class _TabTextState extends State<TabText> {
             Container(
                 child: Text(
               widget.text,
-              style: TextStyle(
-                  fontSize: 15.0,
-                  fontFamily: 'Muli',
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.primaryColor),
+              style: TextStyles.regular,
             )),
             Padding(
               padding: EdgeInsets.only(top: 10),

@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class TourItem extends StatefulWidget {
   final String imageUrl;
@@ -69,7 +72,7 @@ class _TourItemState extends State<TourItem> {
                       right: 5,
                       child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColors.white,
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                           height: 40,
@@ -78,7 +81,7 @@ class _TourItemState extends State<TourItem> {
                           margin: EdgeInsets.all(10),
                           child: Icon(
                             Icons.bookmark,
-                            color: Colors.blue,
+                            color:  AppColors.blue,
                           )),
                     ),
                     Positioned(
@@ -96,42 +99,9 @@ class _TourItemState extends State<TourItem> {
                           child: Center(
                               child: Text(
                             'New',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: AppColors.white),
                           ))),
                     ),
-                    /* Positioned(
-                      bottom: 100,
-                      left: 15,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          RatingBar.builder(
-                            itemSize: 20,
-                            initialRating: widget.rating,
-                            minRating: 0,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
-                            itemBuilder: (context, _) => Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 5,
-                            ),
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "${widget.rating}",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                        ],
-                      ),
-                    ),*/
                     Positioned(
                       bottom: 50,
                       left: 15,
@@ -142,11 +112,8 @@ class _TourItemState extends State<TourItem> {
                               overflow: TextOverflow.ellipsis,
                               textDirection: TextDirection.rtl,
                               textAlign: TextAlign.left,
-                              style: TextStyle(
-                                  fontFamily: 'Muli',
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold))),
+                              style: TextStyles.tourName.copyWith(
+                                  fontWeight: FontWeight.bold, fontSize: 25))),
                     ),
                     Positioned(
                         bottom: 30,
@@ -158,18 +125,14 @@ class _TourItemState extends State<TourItem> {
                                 overflow: TextOverflow.ellipsis,
                                 textDirection: TextDirection.rtl,
                                 textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  fontFamily: 'Muli',
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                )))),
+                                style: TextStyles.tourName
+                                    .copyWith(fontSize: 15)))),
                     Positioned(
                         bottom: 30,
                         right: 15,
                         child: Container(
                             height: 50,
                             decoration: BoxDecoration(
-                              //color: Colors.grey[300],
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -183,11 +146,9 @@ class _TourItemState extends State<TourItem> {
                                         overflow: TextOverflow.ellipsis,
                                         textDirection: TextDirection.rtl,
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                            fontFamily: 'Muli',
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.normal))),
+                                        style: TextStyles.tourName.copyWith(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 15))),
                                 Padding(
                                     padding: EdgeInsets.only(right: 5),
                                     child: Container(

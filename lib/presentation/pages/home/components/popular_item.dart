@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/utils/app_colors.dart';
+import 'package:travel_app/utils/app_assets.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 class PopularItem extends StatelessWidget {
   final String? name;
@@ -15,8 +16,6 @@ class PopularItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Padding(
         padding: EdgeInsets.all(15),
         child: ClipRRect(
@@ -29,20 +28,10 @@ class PopularItem extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Color(0xFFfae3e2).withOpacity(0.3),
-                    // Colors.grey.withOpacity(0.5),
                     offset: Offset(0.0, 1.0),
-                    //(x,y)
                     blurRadius: 9.0,
                   ),
                 ],
-                /*   boxShadow: [
-        BoxShadow(
-          color: Color(0xFFfae3e2).withOpacity(0.3),
-          spreadRadius: 1,
-          blurRadius: 1,
-          offset: Offset(0, 1),
-        ),
-      ]*/
               ),
               child: Card(
                   color: Colors.white,
@@ -66,7 +55,7 @@ class PopularItem extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/timimoun.jpg'),
+                              image: AssetImage(AppAssets.timimoun),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -86,31 +75,33 @@ class PopularItem extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Container(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Text(
-                                        "$name",
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.left,
+                                    ...[
+                                      Container(
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child: Text(
+                                          "$name",
+                                          style: TextStyles.bold,
+                                          textAlign: TextAlign.left,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 6,
-                                    ),
-                                    Container(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Text(
-                                        "$subtitle",
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            color: AppColors.secondaryColor,
-                                            fontWeight: FontWeight.w400),
-                                        textAlign: TextAlign.left,
+                                      Container(
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child: Text(
+                                          "$subtitle",
+                                          style: TextStyles.regular2,
+                                          textAlign: TextAlign.left,
+                                        ),
                                       ),
-                                    ),
+                                    ].expand(
+                                      (widget) => [
+                                        widget,
+                                        const SizedBox(
+                                          height: 6,
+                                        )
+                                      ],
+                                    )
                                   ],
                                 ),
                               ],

@@ -7,6 +7,7 @@ import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
 import 'package:travel_app/utils/app_colors.dart';
 import 'package:travel_app/utils/constants.dart';
 import 'package:travel_app/utils/size_config.dart';
+import 'package:travel_app/utils/text_styles.dart';
 
 import 'categories_list_view.dart';
 import 'search_bar.dart';
@@ -66,19 +67,12 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('CATEGORIES',
-                      style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 10,
-                          color: AppColors.mediumGrey)),
+                  Text('CATEGORIES', style: TextStyles.normal),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
                   ),
                   Text("Choose your own adventure",
-                      style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15,
-                          color: Colors.black)),
+                      style: TextStyles.heading.copyWith(fontSize: 15)),
                   CategoriesListView()
                 ],
               ),
@@ -91,18 +85,11 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 20),
-                      child: Text('BEST RATING',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 10,
-                              color: AppColors.mediumGrey))),
+                      child: Text('BEST RATING', style: TextStyles.normal)),
                   Padding(
                       padding: EdgeInsets.only(left: 20, top: 10),
                       child: Text("Popular Destinations",
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                              color: Colors.black))),
+                          style: TextStyles.heading.copyWith(fontSize: 15))),
                   Container(
                       height: size.height * 0.35,
                       width: size.width,

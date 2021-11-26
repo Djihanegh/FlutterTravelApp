@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/presentation/pages/home/components/category_widget.dart';
+import 'package:travel_app/utils/app_assets.dart';
 import 'package:travel_app/utils/size_config.dart';
 
 class CategoriesListView extends StatelessWidget {
@@ -13,20 +14,20 @@ class CategoriesListView extends StatelessWidget {
         width: SizeConfig.screenWidth,
         child: ListView(scrollDirection: Axis.horizontal, children: [
           CategoryWidget(
-            imageUrl: 'assets/images/skydiving.jpeg',
+            imageUrl: AppAssets.skydiving,
             name: "Skydiving",
           ),
           CategoryWidget(
-            imageUrl: 'assets/images/trekking.jpg',
+            imageUrl: AppAssets.trekking,
             name: "Trekking",
           ),
           CategoryWidget(
-            imageUrl: 'assets/images/hiking.jpg',
+            imageUrl: AppAssets.hiking,
             name: "Hiking",
           ),
-          CategoryWidget(imageUrl: 'assets/images/biking.jpg', name: "Biking"),
+          CategoryWidget(imageUrl: AppAssets.biking, name: "Biking"),
           CategoryWidget(
-            imageUrl: 'assets/images/diving.jpg',
+            imageUrl: AppAssets.diving,
             name: "Diving",
           ),
         ]));
