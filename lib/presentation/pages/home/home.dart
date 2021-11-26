@@ -38,25 +38,25 @@ class _HomeState extends State<Home> {
                 BottomNavBarItem(
                   icon: Icons.home_outlined,
                   index: 0,
-                  onPressed: _onPressed,
+                  onPressed: () => _onPressed(0),
                   navBarIndex: navBarIndex,
                 ),
                 BottomNavBarItem(
                   icon: Icons.favorite_border_outlined,
                   index: 1,
-                  onPressed: _onPressed,
+                  onPressed: () => _onPressed(1),
                   navBarIndex: navBarIndex,
                 ),
                 BottomNavBarItem(
                   icon: Icons.explore_outlined,
                   index: 2,
-                  onPressed: _onPressed,
+                  onPressed: () => _onPressed(2),
                   navBarIndex: navBarIndex,
                 ),
                 BottomNavBarItem(
                   icon: Icons.person_outline_rounded,
                   index: 3,
-                  onPressed: _onPressed,
+                  onPressed: () => _onPressed(3),
                   navBarIndex: navBarIndex,
                 ),
               ],
@@ -65,6 +65,7 @@ class _HomeState extends State<Home> {
   }
 
   void _onPressed(int index) {
+    print("ONNNNNNNNNNNNNNNNNNN");
     setState(() {
       navBarIndex = index;
     });
