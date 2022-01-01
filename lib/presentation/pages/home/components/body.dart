@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/data/models/place.dart';
+import 'package:travel_app/domain/models/place.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_item.dart';
 import 'package:travel_app/presentation/pages/home/components/popular_text.dart';
 import 'package:travel_app/presentation/pages/home/components/sight_item.dart';
@@ -20,6 +20,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   // Declarations
   int i = 0, navBarIndex = 0;
+  ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -65,7 +66,9 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('CATEGORIES', style: TextStyles.normal.copyWith(color: AppColors.mediumGrey)),
+                  Text('CATEGORIES',
+                      style: TextStyles.normal
+                          .copyWith(color: AppColors.mediumGrey)),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
                   ),
@@ -83,7 +86,9 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 20),
-                      child: Text('BEST RATING', style: TextStyles.normal.copyWith(color: AppColors.mediumGrey))),
+                      child: Text('BEST RATING',
+                          style: TextStyles.normal
+                              .copyWith(color: AppColors.mediumGrey))),
                   Padding(
                       padding: EdgeInsets.only(left: 20, top: 10),
                       child: Text("Popular Destinations",
@@ -92,16 +97,21 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                       height: size.height * 0.35,
                       width: size.width,
                       child: ListView.separated(
+                        controller: _scrollController,
                         physics: ScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         itemCount: places.length,
                         itemBuilder: (BuildContext context, index) {
-                          return SightItem(
-                            imageUrl: places[index].image,
-                            name: places[index].name,
-                            rating: places[index].rating,
-                          );
+                          return AnimatedBuilder(
+                              animation: _scrollController,
+                              builder: (context, child) {
+                                return Container(
+                             //     imageUrl: places[index].image,
+                             //     name: places[index].name,
+                             //     rating: places[index].rating,
+                                );
+                              });
                         },
                         separatorBuilder: (BuildContext context, int index) {
                           return SizedBox(

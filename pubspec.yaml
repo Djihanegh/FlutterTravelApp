@@ -44,9 +44,11 @@ dependencies:
   dartz: ^0.10.0
   flutter_svg: ^0.23.0+1
   build_runner: ^2.1.5
+  json_serializable: ^5.0.2
 
 dev_dependencies:
   build_runner:
+  freezed:
   injectable_generator:
 
   flutter_test:

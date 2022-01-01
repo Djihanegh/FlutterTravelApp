@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/config/routes/routes.dart';
+import 'package:travel_app/presentation/pages/details/detail_page.dart';
 import 'package:travel_app/presentation/pages/favorite/favorite_page.dart';
 import 'package:travel_app/presentation/pages/home/home.dart';
 import 'package:travel_app/presentation/pages/trips/trips_page.dart';
@@ -19,7 +20,10 @@ class RouteGenerator {
       case Routes.favorite:
         return CupertinoPageRoute(builder: (_) => FavoritePage());
 
-       // return _errorRoute();
+      case Routes.detail:
+        return CupertinoPageRoute(builder: (_) => DetailPage());
+
+      // return _errorRoute();
 
       // case Routes.profile:
       //    return CupertinoPageRoute(builder: (_) => List_Libraries());
