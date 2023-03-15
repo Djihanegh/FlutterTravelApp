@@ -1,8 +1,8 @@
-# Adventure_app
+# Flutter Travel App
 
-I'am developing an adventure app with Flutter and Firebase, to show how to apply  best practices,  in Flutter to build a scalable app.
-Still in progress....
-## Some pictures of the App
+A Travel app developed using Flutter and Firebase.
+( Still in progress.... )
+## Screenshots
 
 ![259228637_1321874704913984_8494662416812869928_n](https://user-images.githubusercontent.com/40029149/148287844-58fed95a-9e87-4fa4-91ac-28af4ea89781.jpg)
 ![257978092_313526307030532_4347847891675271782_n](https://user-images.githubusercontent.com/40029149/148287813-710f2cb1-59f0-4dae-870b-63e80e87a7c3.jpg)
